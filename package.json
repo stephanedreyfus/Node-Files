@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/aGravitous/Node-Files/issues"
   },
-  "homepage": "https://github.com/aGravitous/Node-Files#readme"
+  "homepage": "https://github.com/aGravitous/Node-Files#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
 }
