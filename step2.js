@@ -1,4 +1,5 @@
-const fs = require("fs")
+const fs = require("fs");
+const acios = require("axios");
 
 function cat(path){
     fs.readFile(path, "utf8", function(error, data){
@@ -8,11 +9,20 @@ function cat(path){
         }
         console.log(`Here is some data: ${data}`)
     })
-}
-
-module.exports = cat;
+};
 
 // Node command lines:
 // > const cat = require("./step1")
 
 // > cat("./one.txt")
+
+async function webCat(url){
+    let urlResponse = await axios.get(url);
+    console.log(urlResponse.data);
+}
+
+
+module.exports = {
+    cat,
+    webCat
+}
