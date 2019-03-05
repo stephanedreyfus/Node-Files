@@ -9,7 +9,11 @@ async function cat(argv){
     if(argv.length < 5){
         input = argv[2]
     }else {
-        input = "./" + argv[4]
+        if (argv[4].startsWith("http")){
+            input = arg[4];
+        } else {
+            input = "./" + argv[4]
+        }
         path = argv[3]
     }
 
@@ -33,8 +37,8 @@ async function cat(argv){
     
 };
 
+// Print helper function.
 function print(output, path=null){
-    // how should we output?
     if(path){
         console.log("outpt", output)
         fs.writeFile(path, output, function(error){
@@ -43,7 +47,7 @@ function print(output, path=null){
                 process.exit(1);
             }
         });
-    }else {
+    } else {
         console.log(output)   
     }
 }
