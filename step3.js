@@ -1,14 +1,42 @@
 const fs = require("fs");
 const axios = require("axios");
 
+// Print helper function.
+function print(output, path=null){
+    if(path){
+        console.log("outpt", output)
+        fs.writeFile(path, output, function(error){
+            if (error) {
+                console.log(error);
+                process.exit(1);
+            }
+        });
+    } else {
+        console.log(output)   
+    }
+}
+
+// Get data from website function.
+async function webCat(url){
+    try {
+        return await axios.get(url);
+    }
+    catch(error){
+        console.log(error);
+        process.exit(1);
+    }
+}
+
+// Main function of cat.
 async function cat(argv){
     let input
     let path
 
-    // what args do we have?
+    // Is this an --out command or not?
     if(argv.length < 5){
         input = argv[2]
     }else {
+        // If not then we have to decide it if's html or not.
         if (argv[4].startsWith("http")){
             input = arg[4];
         } else {
@@ -37,30 +65,6 @@ async function cat(argv){
     
 };
 
-// Print helper function.
-function print(output, path=null){
-    if(path){
-        console.log("outpt", output)
-        fs.writeFile(path, output, function(error){
-            if (error) {
-                console.log(error);
-                process.exit(1);
-            }
-        });
-    } else {
-        console.log(output)   
-    }
-}
-
-async function webCat(url){
-    try {
-        return await axios.get(url);
-    }
-    catch(error){
-        console.log(error);
-        process.exit(1);
-    }
-}
 
 
 cat(process.argv)
