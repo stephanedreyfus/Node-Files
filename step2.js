@@ -25,5 +25,4 @@ async function webCat(url){
     }
 }
 
-
-module.exports = cat
+cat(process.argv[2])
