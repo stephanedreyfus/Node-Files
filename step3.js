@@ -38,7 +38,7 @@ async function cat(argv){
     }else {
         // If not then we have to decide it if's html or not.
         if (argv[4].startsWith("http")){
-            input = arg[4];
+            input = argv[4];
         } else {
             input = "./" + argv[4]
         }
@@ -48,7 +48,8 @@ async function cat(argv){
     // get the data
     let output;
     if(input.startsWith("http")){
-        output = await webCat(input)
+        resp = await webCat(input)
+        output = resp.data
 
         print(output, path)
     } else {
