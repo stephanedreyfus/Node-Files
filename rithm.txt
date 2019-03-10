@@ -1,0 +1,24 @@
+<META NAME="keywords" CONTENT="rithm, 'rithm, rithm & blues, 'rithm & blues, rithm and blues, 'rithm and blues,rithmandblues,'rithmandblues,rithm&blues,'rithm&blues,magazine, Black, black, www.rithm.com, contemporary, Black professional,
+black professional, unreal, unreal life, firing line, the firing line, bits and pieces, information redux, redux, information, revolutionary view, out of the box, mannish ways, tavares ford, stephen benedict, ray gilstrap"
+
+<meta name="description" content="Black/minority owned magazine
+dedicated to professionals and artists.">
+
+ 
+<html>
+<head>
+<title>rithm.com</title>
+</head>
+
+<body bgcolor=black>
+
+<center>
+<a href=contents/2019-03.shtml><img src=/images/cover.jpg
+border=0></a><br>
+<!--
+<a href=contents/2019-03.shtml><img src=/images/cover.jpg
+border=0></a><br>
+-->
+</center>
+</body>
+</html>

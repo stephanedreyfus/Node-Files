@@ -4,7 +4,7 @@ const axios = require("axios");
 // Print helper function.
 function print(output, path=null){
     if(path){
-        console.log("output", output)
+        console.log("output", output);
         fs.writeFile(path, output, function(error){
             if (error) {
                 console.log(error);
@@ -12,7 +12,7 @@ function print(output, path=null){
             }
         });
     } else {
-        console.log(output)   
+        console.log(output)   ;
     }
 }
 
@@ -34,24 +34,24 @@ async function cat(argv){
 
     // Is this an --out command or not?
     if(argv.length < 5){
-        input = argv[2]
+        input = argv[2];
     }else {
         // If not then we have to decide it if's html or not.
         if (argv[4].startsWith("http")){
             input = argv[4];
         } else {
-            input = "./" + argv[4]
+            input = "./" + argv[4];
         }
-        path = argv[3]
+        path = argv[3];
     }
 
     // get the data
     let output;
     if(input.startsWith("http")){
-        resp = await webCat(input)
+        resp = await webCat(input);
         output = resp.data
 
-        print(output, path)
+        print(output, path);
     } else {
         fs.readFile(input, "utf8", function(error, data){
             if (error) {
@@ -60,7 +60,7 @@ async function cat(argv){
             }
             output = data
 
-            print(output, path)
+            print(output, path);
         }) 
     } 
     
