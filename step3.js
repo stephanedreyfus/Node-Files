@@ -4,7 +4,7 @@ const axios = require("axios");
 // Print helper function.
 function print(output, path=null){
     if(path){
-        console.log("outpt", output)
+        console.log("output", output)
         fs.writeFile(path, output, function(error){
             if (error) {
                 console.log(error);
@@ -29,8 +29,8 @@ async function webCat(url){
 
 // Main function of cat.
 async function cat(argv){
-    let input
-    let path
+    let input;
+    let path;
 
     // Is this an --out command or not?
     if(argv.length < 5){
